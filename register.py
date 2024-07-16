@@ -55,6 +55,14 @@ def buy_product(pro, count):
 		bought.update(bought_update)
 	return multiply
 
+'''
+a = (input("Product number: "))
+b = (input("The product count: "))
+
+while a.isdigit() is False and b.isdigit() is False
+
+buy_product(a, b)
+'''
 def buy_product2():
 	while True:
 		try:
@@ -67,17 +75,23 @@ def buy_product2():
 		except IndexError:
 			print('No products with such number')
 		else:
-			done = input("Are you done (y/n)? ").lower()
-			if done == "y":
-				break
-			elif done == "n":
-				buy_product2()
-				break
-			else:
-				while done != "y" and done != "n":
+			while True:
+				done = (lambda one: one.lower()) (input("Are you done (y/n)? "))
+				if done == "y":
+					break
+				elif done == "n":
+					buy_product2()
+					break
+				else:
 					print('Enter "y" or "n".')
-					done = input("Are you done (y/n)? ").lower()
-											
+			break	
+'''
+				def done():
+					one = input("Are you done (y/n)? ")
+					return one
+				done = done()				
+'''				
+							
 while True:
 	buy_product2()
 	break
@@ -141,6 +155,7 @@ def discount(percent):
 	return result
 
 discount_notice = "Do you want to find out if you're eligible for a discount? To determine your eligibility, we will ask you about your age & student status. By entering 'y', you agree to our Privacy Policy. (y/n): "
+print('\n')
 
 discount_opt = (input(discount_notice)).lower()
 
