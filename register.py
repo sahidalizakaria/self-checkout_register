@@ -13,8 +13,7 @@ padding = 2
 numbered_catalogue = {}
 for n, (k, v) in enumerate(catalogue.items()):
     numbered_catalogue.update({str(n+1):[k,v]})
-print(catalogue.items())
-print(numbered_catalogue)
+
 space0 = []
 space_0 = length(numbered_catalogue) + padding
 space0.append(space_0)
@@ -59,7 +58,6 @@ def buy_product(pro, count):
 def count_input():
 	while True:
 		try:
-			print('\n')
 			b = int(input("The product count: "))
 			return b
 			break
@@ -207,13 +205,7 @@ while True:
 		break
 	except ValueError:
 		print('Enter whole number/s.')
-'''		
-change = money - discounted
-change_len = len(str(change))
-money_len = len(str(money))
-if  change_len <= money_len:
-	space_total += (money_len - change_len)
-'''
+
 print(f"{'Change:':{space_total}}{money - discounted}")
 
 print("\n" + "Thank you for your purchase!")
