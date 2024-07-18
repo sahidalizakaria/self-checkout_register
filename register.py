@@ -11,10 +11,11 @@ def length(dictionary):
 padding = 2
 
 numbered_catalogue = {}
-for i, (k, v) in enumerate(catalogue.items()):
-    numbered_catalogue.update({str(i+1):[k,v]})
-
-space0 =[]
+for n, (k, v) in enumerate(catalogue.items()):
+    numbered_catalogue.update({str(n+1):[k,v]})
+print(catalogue.items())
+print(numbered_catalogue)
+space0 = []
 space_0 = length(numbered_catalogue) + padding
 space0.append(space_0)
 
@@ -22,7 +23,7 @@ number_header_len = len('No.')
 if space0[0] <= number_header_len:
 	space0[0] = number_header_len + 1
 
-space1 =[]
+space1 = []
 space_1 = length(catalogue) + padding
 space1.append(space_1)
 
@@ -55,26 +56,29 @@ def buy_product(pro, count):
 		bought.update(bought_update)
 	return multiply
 
-'''
-a = (input("Product number: "))
-b = (input("The product count: "))
+def count_input():
+	while True:
+		try:
+			print('\n')
+			b = int(input("The product count: "))
+			return b
+			break
+		except ValueError:
+			print('Enter numerical value.')
 
-while a.isdigit() is False and b.isdigit() is False
-
-buy_product(a, b)
-'''
 def buy_product2():
 	while True:
 		try:
 			print('\n')
 			a = int(input("Product number: "))
-			b = int(input("The product count: "))
-			buy_product(a, b)
+			catalogue_list[a-1]
 		except ValueError:
 			print('Enter numerical value.')
 		except IndexError:
 			print('No products with such number')
 		else:
+			b = count_input()
+			buy_product(a, b)
 			while True:
 				done = (lambda one: one.lower()) (input("Are you done (y/n)? "))
 				if done == "y":
@@ -84,13 +88,7 @@ def buy_product2():
 					break
 				else:
 					print('Enter "y" or "n".')
-			break	
-'''
-				def done():
-					one = input("Are you done (y/n)? ")
-					return one
-				done = done()				
-'''				
+			break				
 							
 while True:
 	buy_product2()
@@ -217,3 +215,5 @@ if  change_len <= money_len:
 	space_total += (money_len - change_len)
 '''
 print(f"{'Change:':{space_total}}{money - discounted}")
+
+print("\n" + "Thank you for your purchase!")
