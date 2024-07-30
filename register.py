@@ -142,7 +142,7 @@ space_underscore = space_total + space_bpl
 for i in range(space_underscore):
 	print("-", end="")
 print("+")
-print(f"\n{'Total:':{space_total}}{total}\n")
+print(f"{'Total:':{space_total}}{total}\n")
 
 
 #calculate the discount
